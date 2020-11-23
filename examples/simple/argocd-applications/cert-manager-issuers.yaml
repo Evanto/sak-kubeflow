@@ -11,7 +11,7 @@
   "source":
     "path": "examples/simple/argocd-applications/issuers"
     "repoURL": "https://github.com/provectus/sak-kubeflow"
-    "targetRevision": "example"
+    "targetRevision": "temp-4-german"
   "syncPolicy":
     "automated":
       "prune": true

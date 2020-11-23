@@ -14,7 +14,7 @@
       - "aipipeline/kubeflow-operator=provectuslabs/kubeflow-operator:master"
     "path": "deploy"
     "repoURL": "https://github.com/kubeflow/kfctl"
-    "targetRevision": "v1.1-branch"
+    "targetRevision": "v1.2-branch"
   "syncPolicy":
     "automated":
       "prune": true

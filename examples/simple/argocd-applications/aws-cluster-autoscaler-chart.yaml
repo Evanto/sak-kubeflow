@@ -1,7 +1,7 @@
 "apiVersion": "argoproj.io/v1alpha1"
 "kind": "Application"
 "metadata":
-  "name": "aws-cluster-autoscaler"
+  "name": "aws-cluster-autoscaler-chart"
   "namespace": "argocd"
 "spec":
   "destination":
@@ -9,11 +9,11 @@
     "server": "https://kubernetes.default.svc"
   "project": "default"
   "source":
-    "chart": "cluster-autoscaler"
+    "chart": "cluster-autoscaler-chart"
     "helm":
       "parameters":
       - "name": "rbac.serviceAccountAnnotations.eks\\.amazonaws\\.com/role-arn"
-        "value": "arn:aws:iam::245582572290:role/simple_cluster-autoscaler"
+        "value": "arn:aws:iam::245582572290:role/german_cluster-autoscaler"
       - "name": "cloudProvider"
         "value": "aws"
       - "name": "image.repository"
@@ -21,7 +21,7 @@
       - "name": "image.tag"
         "value": "v1.15.7"
       - "name": "autoDiscovery.clusterName"
-        "value": "simple"
+        "value": "german"
       - "name": "autoDiscovery.enabled"
         "value": "true"
       - "name": "awsRegion"
@@ -42,7 +42,7 @@
         "value": "100m"
       - "name": "resources.requests.memory"
         "value": "300Mi"
-    "repoURL": "https://kubernetes-charts.storage.googleapis.com/"
+    "repoURL": "https://kubernetes.github.io/autoscaler"
     "targetRevision": "8.0.0"
   "syncPolicy":
     "automated":

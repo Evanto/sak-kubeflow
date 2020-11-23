@@ -15,11 +15,11 @@
       - "name": "installCRDs"
         "value": "true"
       - "name": "rbac.serviceAccountAnnotations.eks\\.amazonaws\\.com/role-arn"
-        "value": "arn:aws:iam::245582572290:role/simple_cert-manager"
+        "value": "arn:aws:iam::245582572290:role/german_cert-manager"
       - "name": "aws.region"
         "value": "us-east-2"
       - "name": "domainFilters[0]"
-        "value": "simple.edu.provectus.io"
+        "value": "german.edu.provectus.io"
     "repoURL": "https://charts.jetstack.io"
     "targetRevision": "v0.15.1"
   "syncPolicy":

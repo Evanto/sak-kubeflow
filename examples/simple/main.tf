@@ -5,23 +5,28 @@ terraform {
 module "sak_kubeflow" {
   source = "../.."
 
-  cluster_name = "simple"
+  cluster_name = "german"
 
   owner      = "provectus"
   repository = "sak-kubeflow"
-  branch     = "example"
+  branch     = "temp-4-german"
 
   #Main route53 zone id if exist (Change It)
   mainzoneid = "Z02149423PVQ0YMP19F13"
 
   # Name of domains (create route53 zone and ingress). Set as array, first main ingress fqdn ["example.com", "example.io"]
-  domains = ["simple.edu.provectus.io"]
+  domains = ["german.edu.provectus.io"]
 
   # ARNs of users which would have admin permissions. (Change It)
   admin_arns = [
     {
       userarn  = "arn:aws:iam::245582572290:user/rgimadiev"
       username = "rgimadiev"
+      groups   = ["system:masters"]
+    },
+    {
+      userarn  = "arn:aws:iam::245582572290:user/gosin"
+      username = "gosin"
       groups   = ["system:masters"]
     }
   ]
@@ -33,6 +38,11 @@ module "sak_kubeflow" {
     {
       email    = "rgimadiev@provectus.com"
       username = "rgimadiev"
+      group    = "administrators"
+    },
+    {
+      email    = "gosin@provectus.com"
+      username = "gosin"
       group    = "administrators"
     }
   ]
